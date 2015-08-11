@@ -7,5 +7,10 @@
 !.vim/**
 !.setup_dotfiles.sh
 !.bashrc
+!install.sh
+!.tmux.conf
+!config.fish
+!README.md
+
 # Ignore the installed plugins
 .vim/plugged/**

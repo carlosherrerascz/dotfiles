@@ -1,5 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+" In case the shell being used is fish which has problems with 
+" plugins like syntastic
+set shell=/bin/bash
+
 """"""""""""""
 "THEMING
 """"""""""""""
