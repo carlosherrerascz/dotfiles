@@ -3,7 +3,7 @@ filetype off                  " required
 " In case the shell being used is fish which has problems with 
 " plugins like syntastic
 set shell=/bin/bash
-
+set rtp+=~/.vim/plugged/gruvbox/colors/gruvbox.vim
 """"""""""""""
 "THEMING
 """"""""""""""
