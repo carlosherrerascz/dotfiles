@@ -21,6 +21,7 @@ echo "Plugins installed successfully, now installing .bashrc..."
 cp ~/.bashrc ~/"$DIR"
 echo "Successfully copied bashrc to backup directory."
 rm ~/.bashrc
+echo "Successfully removed .bashrc!"
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 echo ".bashrc installed successfully."
 echo "All done."
