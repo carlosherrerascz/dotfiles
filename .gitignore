@@ -8,3 +8,4 @@
 !.setup_dotfiles.sh
 # Ignore the installed plugins
 .vim/plugged/**
+.bashrc
