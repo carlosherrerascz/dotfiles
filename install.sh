@@ -1,4 +1,7 @@
 #!/bin/bash
+
+## TODO: Whenever I add Arch Linux commands in this script, 
+## I have to use Pacman -S base-devel instead of Python-dev.
 sudo apt-get install vim tmux zsh fish curl cmake python-dev  -y
 echo "Switching from bash to zsh..."
 chsh -s $(which zsh)
