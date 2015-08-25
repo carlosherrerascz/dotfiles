@@ -74,3 +74,12 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
+
+"""""""""""""""""""
+" YOU COMPLETE ME "
+"""""""""""""""""""
+let g:clang_complete_auto = 1
+let g:clang_use_library = 1
+let g:clang_debug = 1
+let g:clang_library_path = '/usr/lib/'
+let g:clang_user_options='|| exit 0'
