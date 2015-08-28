@@ -7,9 +7,10 @@
 !.vim/**
 !.setup_dotfiles.sh
 !.bashrc
-!install.sh
-!.tmux.conf
 !config.fish
+!.zshrc
+!.tmux.conf
+!install.sh
 !README.md
 
 # Ignore the installed plugins
