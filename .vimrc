@@ -13,6 +13,7 @@ set background=dark
 set number
 "set tabbing to 4 spaces.
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+let g:ycm_filetype_whitelist = { 'cpp': 1, 'c': 1, 'python':1 }
 
 set laststatus=2
 """"""""""""""""""""
@@ -31,6 +32,7 @@ Plug 'scrooloose/syntastic'
 Plug 'jpalardy/vim-slime'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'maksimr/vim-jsbeautify'
 call plug#end()
 
 
@@ -74,3 +76,15 @@ nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Dispatch! git push<CR>
 nnoremap <space>gpl :Dispatch! git pull<CR>
+
+"""""""""""
+"Syntastic"
+"""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
