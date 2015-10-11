@@ -1,17 +1,30 @@
 # Ignore everything
 *
 # But not these files...
-!.gitignore
-!.vimrc
-!.vim
-!.vim/**
-!.setup_dotfiles.sh
 !.bashrc
+!.config
 !config.fish
-!.zshrc
-!.tmux.conf
+!.git
+!.gitignore
+!gulpfile.js
+!.i3
+!.i3blocks.conf
+!.i3status
 !install.sh
+!LICENSE
+!.mpd
+!.ncmpcpp
+!.oh-my-zsh
+!package.json
 !README.md
-
+!.tmux.conf
+!.urxvt
+!.vim
+!.vimrc
+!.weechat
+!.xbindkeysrc
+!.Xresources
+!.zlogin
+!.zshrc
 # Ignore the installed plugins
 .vim/plugged/**
