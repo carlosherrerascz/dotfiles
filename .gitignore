@@ -26,5 +26,6 @@
 !.Xresources
 !.zlogin
 !.zshrc
+!makesymlinks.sh
 # Ignore the installed plugins
 .vim/plugged/**
