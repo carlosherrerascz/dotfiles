@@ -1,11 +1,15 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/tatsu/.oh-my-zsh
-
+export DEFAULT_USER='whoami' 
+export DEFAULT_USER=`whoami` 
+BASE16_SHELL="$HOME/.config/base16-shell/base16-chalk.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
+archey3
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -48,13 +52,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ubuntu common-aliases cp colorize web-search tmux)
+plugins=(git)
+
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
+source $zsh~/.oh-my-zsh/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -80,15 +84,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias c='clear'
-#alias ls='ls -Ash --color=auto'
-#alias push='git push origin master'
-#alias lgr='ls | grep --color'
-alias tmux='tmux -2'
-alias tmuxsrc='tmux source-file ~/.tmux.conf'
-alias cls='clear'
-alias mkweb='sh ~/mkweb.sh'
 
-#many thanks to Chris Johnsen from stack overflow!
-#http://stackoverflow.com/a/23774637
-alias clnbytes='perl -pi -e 's/\r$//' ~/.tmux.conf'
+

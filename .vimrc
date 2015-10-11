@@ -1,15 +1,18 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-" In case the shell being used is fish which has problems with 
-" plugins like syntastic
+"In case the shell being used is fish which has problems with 
+"plugins like syntastic
 set shell=/bin/bash
-set rtp+=~/.vim/plugged/gruvbox/colors/gruvbox.vim
+"set rtp+=~/.vim/plugged/gruvbox/colors/gruvbox.vim
+set number
 """"""""""""""
 "THEMING
 """"""""""""""
-set t_Co=256
-colorscheme gruvbox
+let base16colorspace=256
+set t_co=256
 set background=dark
+colorscheme ocean
+
 set number
 "set tabbing to 4 spaces.
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
@@ -33,6 +36,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'maksimr/vim-jsbeautify'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 
