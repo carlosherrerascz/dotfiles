@@ -21,8 +21,8 @@ URxvt.cursorBlink:                     false
 URxvt.underlineColor:                      #51c4d4
 URxvt.cursorColor:                      #51c4d4
 
-URxvt*keysym.Home: \033[1~
-URxvt*keysym.End: \033[4~]]
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~]]]]
 ! Base16 Chalk
 ! Scheme: Chris Kempson (http://chriskempson.com)
 
