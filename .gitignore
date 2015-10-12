@@ -7,7 +7,7 @@
 !.git
 !.gitignore
 !gulpfile.js
-!.i3
+!.i3/
 !.i3blocks.conf
 !.i3status
 !install.sh
