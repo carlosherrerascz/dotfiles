@@ -84,5 +84,6 @@ source $zsh~/.oh-my-zsh/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+alias fullscrot='scrot ~/secondarydrive/Pictures/scrots/%Y-%m-%d-%T-screenshot.png'
+alias selectscrot="scrot -s ~/secondarydrive/Pictures/scrots/%Y-%m-%d-%T-screenshot.png"
 
