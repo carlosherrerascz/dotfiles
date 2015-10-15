@@ -1,0 +1,1 @@
+/home/tatsu/dotfiles/.i3

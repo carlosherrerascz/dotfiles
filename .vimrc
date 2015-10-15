@@ -11,7 +11,7 @@ set number
 let base16colorspace=256
 set t_co=256
 set background=dark
-colorscheme ocean
+colorscheme base16-chalk 
 
 set number
 "set tabbing to 4 spaces.

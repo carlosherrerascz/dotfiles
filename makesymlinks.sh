@@ -12,7 +12,7 @@ echo "dotfiles dir is $dir."
                    
 olddir=$(cd && pwd)/dotfiles_old # old dotfiles directory
 echo "dotfiles_old dir is $olddir."
-files="tmux.conf zshrc urxvtx bindkeysrc weechat zlogin bashrc config i3 i3blocks.conf i3status vimrc vim zshrc oh-my-zsh private Xresources mpd ncmpcpp"    # list of files/folders to symlink in homedir
+files="tmux.conf zshrc urxvtx bindkeysrc weechat zlogin bashrc config i3 i3blocks.conf i3status vimrc vim zshrc oh-my-zsh private Xresources mpd ncmpcpp xbindkeysrc"    # list of files/folders to symlink in homedir
 
 ##########
 
