@@ -92,14 +92,15 @@ assign [class="^URxvt$" instance="^Weechat$"]$ws2
 assign [class="^URxvt$" instance="^Ncmpcpp$"]$ws4
 
 
+######Workspace Locations, won't work on laptops!#####
 #FF, ws1
-workspace "$ws1" output DVI-0
+#workspace "$ws1" output DVI-0
 #Chat, ws2
-workspace "$ws2" output DVI-1
+#workspace "$ws2" output DVI-1
 #code, ws3
-workspace "$ws3" output DVI-0
+#workspace "$ws3" output DVI-0
 #music, ws4
-workspace 4 output DVI-1
+#workspace 4 output DVI-1
 # Firefox
 set $ws1 1: 
 # Chat
