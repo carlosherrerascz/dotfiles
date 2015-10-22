@@ -316,7 +316,11 @@ bar {
         }
 }
 
+<<<<<<< HEAD
 for_window [class="^.*"] border pixel 1
+=======
+for_window [class="^.*"] border pixel 3
+>>>>>>> Change in i3 border width.
 
 # Gaps settings
 # gaps inner 10
