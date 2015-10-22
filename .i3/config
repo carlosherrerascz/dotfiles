@@ -228,7 +228,7 @@ bar {
         }
 }
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 3
 
 # Gaps settings
 # gaps inner 10
