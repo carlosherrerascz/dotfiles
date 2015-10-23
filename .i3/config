@@ -27,7 +27,7 @@ set $ws10 "10"
 
 #font pango:Meslo LG S DZ for Powerline 10
 #font pango: Source Code Pro 9
-font pango: Font Awesome 9
+font pango: Font Awesome 10
 floating_modifier $mod
 
 bindsym $mod+Shift+q kill
@@ -35,10 +35,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Return exec urxvt
 bindsym $mod+d exec --no-startup-id dmenu_run
 
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -53,7 +53,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 bindsym $mod+v split v
 
 bindsym $mod+f fullscreen
@@ -228,11 +228,7 @@ bar {
         }
 }
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 3
 
 # Gaps settings
-# gaps inner 10
-
-exec [--no-startup-id] firefox 
-exec [--no-startup-id] urxvt
-
+gaps inner 10

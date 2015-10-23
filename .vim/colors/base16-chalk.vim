@@ -260,6 +260,7 @@ call <sid>hi("javaScript",        s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScriptBraces",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "", "")
 
+<<<<<<< Updated upstream
 " Mail highlighting
 "call <sid>hi("mailQuoted1",  s:gui0A, "", s:cterm0A, "", "")
 "call <sid>hi("mailQuoted2",  s:gui0B, "", s:cterm0B, "", "")
@@ -269,6 +270,8 @@ call <sid>hi("javaScriptNumber",  s:gui09, "", s:cterm09, "", "", "")
 "call <sid>hi("mailQuoted6",  s:gui0A, "", s:cterm0A, "", "")
 "call <sid>hi("mailURL",      s:gui0D, "", s:cterm0D, "", "")
 "call <sid>hi("mailEmail",    s:gui0D, "", s:cterm0D, "", "")
+=======
+>>>>>>> Stashed changes
 
 " Markdown highlighting
 call <sid>hi("markdownCode",              s:gui0B, "", s:cterm0B, "", "", "")
