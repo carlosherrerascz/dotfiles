@@ -44,10 +44,10 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+h move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -94,13 +94,13 @@ assign [class="^URxvt$" instance="^Ncmpcpp$"]$ws4
 
 ######Workspace Locations, won't work on laptops!#####
 #FF, ws1
-#workspace "$ws1" output DVI-0
+workspace "$ws1" output DVI-0
 #Chat, ws2
-#workspace "$ws2" output DVI-1
+workspace "$ws2" output DVI-1
 #code, ws3
-#workspace "$ws3" output DVI-0
+workspace "$ws3" output DVI-0
 #music, ws4
-#workspace 4 output DVI-1
+workspace 4 output DVI-1
 # Firefox
 set $ws1 1: 
 # Chat
@@ -232,3 +232,4 @@ for_window [class="^.*"] border pixel 3
 
 # Gaps settings
 gaps inner 10
+gaps outer 10
