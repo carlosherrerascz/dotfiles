@@ -16,8 +16,10 @@ set $ws1 1: 
 set $ws2 2: 
 # Coding
 set $ws3 3:  
-set $ws4  "4"
-set $ws5  "5"
+# Busywork (Writing, research)
+set $ws4 4: 
+# Music
+set $ws5 5: 
 set $ws6  "6"
 set $ws7  "7"
 set $ws8  "8"
@@ -27,13 +29,19 @@ set $ws10 "10"
 
 #font pango:Meslo LG S DZ for Powerline 10
 #font pango: Source Code Pro 9
-font pango: Font Awesome 10
+font pango: Font Awesome 10, Terminus 8
 floating_modifier $mod
 
 bindsym $mod+Shift+q kill
 
+
+
+################################################
+# APP LAUNCHING
+################################################
 bindsym $mod+Return exec urxvt
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+m exec urxvt -name ncmpcpp -e ncmpcpp
+bindsym $mod+d exec rofi -show run -auto-select -location 2 
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -68,10 +76,6 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
-
-# for reference
-#bindsym $mod+3 workspace 3:<span foreground="white"></span>
-
 # Setting pretty icons as workspace labels
 
 bindsym $mod+1 workspace $ws1
@@ -86,11 +90,24 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 bindsym $mod+Tab workspace back_and_forth
 
+###################################
+# WORKSPACE ASSIGNMENTS FOR APPS
+###################################
+
+assign [instance="ncmpcpp"] $ws5
+assign [class="Firefox" title="(?i)Private Browsing"] 5
 assign [class="Firefox"] $ws1
 assign [class="^URxvt$"] $ws3
-assign [class="^URxvt$" instance="^Weechat$"]$ws2
-assign [class="^URxvt$" instance="^Ncmpcpp$"]$ws4
+assign [instance="libreoffice"] $ws4
+assign [instance="discord"] $ws2
 
+
+###################################
+# STARTUP
+###################################
+exec firefox-nightly
+exec discord
+exec urxvt
 
 ######Workspace Locations, won't work on laptops!#####
 #FF, ws1
@@ -99,14 +116,10 @@ workspace "$ws1" output DVI-0
 workspace "$ws2" output DVI-1
 #code, ws3
 workspace "$ws3" output DVI-0
-#music, ws4
-workspace 4 output DVI-1
-# Firefox
-set $ws1 1: 
-# Chat
-set $ws2 2: 
-# Coding
-set $ws3 3:  
+#work, ws4
+workspace "$ws4" output DVI-1
+#music, ws5
+workspace "$ws5" output DVI-1
 
 workspace_auto_back_and_forth yes
 
@@ -143,10 +156,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 5 px or 5 ppt
@@ -163,10 +176,14 @@ bindsym $mod+shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 ## My Alterations
-bindsym $mod+F12 exec amixer set Master 5%+
-bindsym $mod+F11 exec amixer set Master 5%-
+
+## AUDIO
+bindsym $mod+F12 exec amixer set Master 4%+
+bindsym $mod+F11 exec amixer set Master 4%-
 bindsym $mod+F10 exec amixer set Master toggle
-bindsym $mod+m exec urxvt -e ncmpcpp
+
+##APPS
+
 
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
@@ -178,7 +195,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym $mod+Shift+P sticky toggle
 bindsym $mod+y fullscreen disable; floating enable;
 #bindsym $mod+Tab            workspace next
-
 
 for_window [class="^.*"] border pixel 0
 # ~/.i3/config
@@ -213,15 +229,16 @@ client.urgent $base02 $base08 $base07 $base08
 bar {
     ## remember to add your favourite status bar, i.e.,
     status_command i3blocks
-    strip_workspace_numbers yes 
+    strip_workspace_numbers no 
     position top
     verbose yes
-
+    font pango:Source Code Pro 9, Font Awesome 8
     colors {
             separator $base03
                 background $base01
                 statusline $base05
                 focused_workspace $base0C $base0D $base00
+                separator #606060
                 active_workspace $base02 $base02 $base07
                 inactive_workspace $base01 $base01 $base03
                 urgent_workspace $base08 $base08 $base07
@@ -229,6 +246,8 @@ bar {
 }
 
 for_window [class="^.*"] border pixel 3
+
+
 
 # Gaps settings
 gaps inner 10
