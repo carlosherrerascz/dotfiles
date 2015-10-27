@@ -12,10 +12,11 @@ set $warning    #e84f4f
 
 ## Set $wsx's were here
 # Firefox
-set $ws1 1: 
+set $ws1 1: "1 "
 # Chat
-set $ws2 2: 
+set $ws2 2: "2 "
 # Coding
+<<<<<<< HEAD
 set $ws3 3:  
 # Busywork (Writing, research)
 set $ws4 4: 
@@ -23,6 +24,12 @@ set $ws4 4: 
 set $ws5 5: 
 # Music
 set $ws6 6:    
+=======
+set $ws3 3: "3 " 
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+>>>>>>> .
 set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"

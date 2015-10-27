@@ -84,7 +84,7 @@ if ($status eq 'Discharging') {
     # icon types depending on how far in the charge is for 
     # reference and prettiness. :-)
     if ($percent > 85) {
-        print " $full_text\n";
+        print "  $full_text\n";
         print "$short_text\n";
     } elsif ($percent <= 10) {
        print "  $full_text\n";
