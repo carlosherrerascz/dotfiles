@@ -18,9 +18,10 @@ set $ws2 2: 
 set $ws3 3:  
 # Busywork (Writing, research)
 set $ws4 4: 
+# email
+set $ws5 5: 
 # Music
-set $ws5 5: 
-set $ws6  "6"
+set $ws6 6: 
 set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"
@@ -35,12 +36,13 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 
-
 ################################################
 # APP LAUNCHING
 ################################################
 bindsym $mod+Return exec urxvt
+bindsym $mod+shift+Return exec urxvt -name ranger -e ranger
 bindsym $mod+m exec urxvt -name ncmpcpp -e ncmpcpp
+bindsym $mod+shift+m exec urxvt -name mutt -e mutt 
 bindsym $mod+d exec rofi -show run -auto-select -location 2 
 
 bindsym $mod+h focus left
@@ -90,17 +92,6 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 bindsym $mod+Tab workspace back_and_forth
 
-###################################
-# WORKSPACE ASSIGNMENTS FOR APPS
-###################################
-
-assign [instance="ncmpcpp"] $ws5
-assign [class="Firefox" title="(?i)Private Browsing"] 5
-assign [class="Firefox"] $ws1
-assign [class="^URxvt$"] $ws3
-assign [instance="libreoffice"] $ws4
-assign [instance="discord"] $ws2
-
 
 ###################################
 # STARTUP
@@ -109,7 +100,21 @@ exec firefox-nightly
 exec discord
 exec urxvt
 
-######Workspace Locations, won't work on laptops!#####
+###################################
+# WORKSPACE ASSIGNMENTS FOR APPS
+###################################
+assign [instance="ncmpcpp"] $ws6
+assign [instance="spotify" class="Spotify" title="Spotify"] $ws6
+assign [instance="mutt"] $ws5
+assign [class="Firefox" title="(?i)Private Browsing"] 5
+assign [class="Firefox"] $ws1
+assign [class="^URxvt$"] $ws3
+assign [instance="libreoffice"] $ws4
+assign [instance="discord"] $ws2
+
+###################################
+# WORKSPACE MULTIDISPLAY 
+###################################
 #FF, ws1
 workspace "$ws1" output DVI-0
 #Chat, ws2
@@ -117,9 +122,11 @@ workspace "$ws2" output DVI-1
 #code, ws3
 workspace "$ws3" output DVI-0
 #work, ws4
-workspace "$ws4" output DVI-1
-#music, ws5
+workspace "$ws4" output DVI-0
+#mail, ws5
 workspace "$ws5" output DVI-1
+#music, ws6
+workspace "$ws6" output DVI-1
 
 workspace_auto_back_and_forth yes
 
