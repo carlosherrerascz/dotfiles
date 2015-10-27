@@ -11,14 +11,17 @@ set $warning    #e84f4f
 
 ## Set $wsx's were here
 # Firefox
-set $ws1 1: "1 "
+set $ws1 1: 
 # Chat
-set $ws2 2: "2 "
+set $ws2 2: 
 # Coding
-set $ws3 3: "3 " 
-set $ws4  "4"
-set $ws5  "5"
-set $ws6  "6"
+set $ws3 3:  
+# Busywork (Writing, research)
+set $ws4 4: 
+# email
+set $ws5 5: 
+# Music
+set $ws6 6: 
 set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"
@@ -27,33 +30,40 @@ set $ws10 "10"
 
 #font pango:Meslo LG S DZ for Powerline 10
 #font pango: Source Code Pro 9
-font pango: Font Awesome 9
+font pango: Font Awesome 10, Terminus 8
 floating_modifier $mod
 
 bindsym $mod+Shift+q kill
 
-bindsym $mod+Return exec urxvt
-bindsym $mod+d exec --no-startup-id dmenu_run
 
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+################################################
+# APP LAUNCHING
+################################################
+bindsym $mod+Return exec urxvt
+bindsym $mod+shift+Return exec urxvt -name ranger -e ranger
+bindsym $mod+m exec urxvt -name ncmpcpp -e ncmpcpp
+bindsym $mod+shift+m exec urxvt -name mutt -e mutt 
+bindsym $mod+d exec rofi -show run -auto-select -location 2 
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+h move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 bindsym $mod+v split v
 
 bindsym $mod+f fullscreen
@@ -67,10 +77,6 @@ bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+a focus parent
 #bindsym $mod+d focus child
-
-
-# for reference
-#bindsym $mod+3 workspace 3:<span foreground="white"></span>
 
 # Setting pretty icons as workspace labels
 
@@ -86,27 +92,25 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 bindsym $mod+Tab workspace back_and_forth
 
+
+###################################
+# STARTUP
+###################################
+exec firefox-nightly
+exec discord
+exec urxvt
+
+###################################
+# WORKSPACE ASSIGNMENTS FOR APPS
+###################################
+assign [instance="ncmpcpp"] $ws6
+assign [instance="spotify" class="Spotify" title="Spotify"] $ws6
+assign [instance="mutt"] $ws5
+assign [class="Firefox" title="(?i)Private Browsing"] 5
 assign [class="Firefox"] $ws1
 assign [class="^URxvt$"] $ws3
-assign [class="^URxvt$" instance="^Weechat$"]$ws2
-assign [class="^URxvt$" instance="^Ncmpcpp$"]$ws4
-
-
-######Workspace Locations, won't work on laptops!#####
-#FF, ws1
-#workspace "$ws1" output DVI-0
-#Chat, ws2
-#workspace "$ws2" output DVI-1
-#code, ws3
-#workspace "$ws3" output DVI-0
-#music, ws4
-#workspace 4 output DVI-1
-# Firefox
-set $ws1 1: 
-# Chat
-set $ws2 2: 
-# Coding
-set $ws3 3:  
+assign [instance="libreoffice"] $ws4
+assign [instance="discord"] $ws2
 
 workspace_auto_back_and_forth yes
 
@@ -143,10 +147,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 5 px or 5 ppt
@@ -163,10 +167,14 @@ bindsym $mod+shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 ## My Alterations
-bindsym $mod+F12 exec amixer set Master 5%+
-bindsym $mod+F11 exec amixer set Master 5%-
+
+## AUDIO
+bindsym $mod+F12 exec amixer set Master 4%+
+bindsym $mod+F11 exec amixer set Master 4%-
 bindsym $mod+F10 exec amixer set Master toggle
-bindsym $mod+m exec urxvt -e ncmpcpp
+
+##APPS
+
 
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
@@ -178,7 +186,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym $mod+Shift+P sticky toggle
 bindsym $mod+y fullscreen disable; floating enable;
 #bindsym $mod+Tab            workspace next
-
 
 for_window [class="^.*"] border pixel 0
 # ~/.i3/config
@@ -213,15 +220,16 @@ client.urgent $base02 $base08 $base07 $base08
 bar {
     ## remember to add your favourite status bar, i.e.,
     status_command i3blocks
-    strip_workspace_numbers yes 
+    strip_workspace_numbers no 
     position top
     verbose yes
-
+    font pango:Source Code Pro 9, Font Awesome 8
     colors {
             separator $base03
                 background $base01
                 statusline $base05
                 focused_workspace $base0C $base0D $base00
+                separator #606060
                 active_workspace $base02 $base02 $base07
                 inactive_workspace $base01 $base01 $base03
                 urgent_workspace $base08 $base08 $base07
@@ -229,10 +237,3 @@ bar {
 }
 
 for_window [class="^.*"] border pixel 3
-
-# Gaps settings
-# gaps inner 10
-
-exec [--no-startup-id] firefox 
-exec [--no-startup-id] urxvt
-
