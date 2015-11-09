@@ -1,0 +1,506 @@
+{
+	"folder_history":
+	[
+		"/home/tatsu/coding/python/django/myfirstdjango",
+		"/home/tatsu/coding/python/django/mwstables"
+	],
+	"last_window_id": 4,
+	"settings":
+	{
+		"new_window_height": 730.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/index.html",
+				"/home/tatsu/coding/python/django/mwstables/students/urls.py",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/register.html",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/appointment.html",
+				"/home/tatsu/coding/python/django/mwstables/students/views.py",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/pastclasses",
+				"/home/tatsu/coding/python/django/mwstables/students/static/students/css/style.css",
+				"/home/tatsu/coding/python/django/mwstables/mwstables/urls.py"
+			],
+			"find":
+			{
+				"height": 34.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"()",
+					"newapp",
+					"]\n",
+					"\n    ",
+					"nav",
+					"css",
+					"js",
+					"navbar"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 31.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 263.0,
+			"status_bar_visible": true
+		},
+		"new_window_width": 1360.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/tatsu/coding/python/django/mwstables/students/templates/students/register.html",
+					"settings":
+					{
+						"buffer_size": 1967,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/tatsu/coding/python/django/mwstables/students/forms.py",
+					"settings":
+					{
+						"buffer_size": 1256,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "from django.shortcuts import render\nfrom django.http import HttpResponseRedirect\nfrom django.core.urlresolvers import reverse\nfrom django.views import generic\nfrom django.http import HttpResponse\nfrom django.template import RequestContext, loader\nimport datetime\n\nfrom .forms import ClientForm\nfrom .models import Client, Horse\n\nfrom .forms import ClientForm, AppointmentForm\n\nclass IndexView(generic.ListView):\n    template_name = 'students/index.html'\n    context_object_name = 'current_clients'\n\n    def get_queryset(self):\n        \"\"\"Return all customers for the current week.\"\"\" \n        all_class_hours = Client.objects.order_by('next_class')\n\n        # Is the monday of this current week \n        date = datetime.date.today()\n        start_week = date - datetime.timedelta(date.weekday())\n        # Sunday of current week\n        end_week = start_week + datetime.timedelta(7)\n\n        return Client.objects.filter(next_class__range=[start_week, end_week])\n\nclass RegisterView(generic.FormView):\n    template_name = 'students/register.html'\n    form_class = ClientForm\n    model = Client\n    success_url = '/students/complete/'\n\n    def form_valid(self, form):\n        form.save(commit = True)\n        return super(RegisterView, self).form_valid(form)\n\ndef Complete(request):\n    return render(request, 'students/complete.html')\n\nclass AppointmentView(generic.FormView):\n    template_name = \"students/appointment.html\"\n    form_class = AppointmentForm\n    model = Client\n    success_url = '/students/complete/'\n    def post(self, request, *args, **kwargs):\n        # primary_key = self.args['pk'] \n        form = self.form_class(request.POST)\n        if form.is_valid():\n            # <process form cleaned data>\n            # form = AppointmentForm(request.POST.copy(), request.FILES, instance=.instance)\n            form = ClientForm(request.POST.copy(), request.FILES, instance=primary_key)\n            return HttpResponseRedirect('/students/complete/')\n        return render(request, self.template_name, {'form': form})\n\n    # def form_valid(self, form):\n    #     # form = AppointmentForm(self.request.POST, self.instance)\n    #     # form.save(commit = True)o\n    #     self.instance.save()\n    #     return super(AppointmentView, self).form_valid(form)\n\n\n    # def form_valid(self, form):\n    #     self.instance.save()\n    #     return super(EmployeeCreate, self).form_valid(form)",
+					"file": "/home/tatsu/coding/python/django/mwstables/students/views.py",
+					"file_size": 2391,
+					"file_write_time": 1446909291000000,
+					"settings":
+					{
+						"buffer_size": 2394,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/tatsu/coding/python/django/mwstables/students/models.py",
+					"settings":
+					{
+						"buffer_size": 1749,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/tatsu/coding/python/django/mwstables/students/urls.py",
+					"settings":
+					{
+						"buffer_size": 412,
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/tatsu/coding/python/django/mwstables/students/index.html",
+				"/home/tatsu/coding/python/django/mwstables/students/forms.py",
+				"/home/tatsu/coding/python/django/mwstables/students/models.py",
+				"/home/tatsu/coding/python/django/mwstables/students/views.py",
+				"/home/tatsu/coding/python/django/mwstables/students/urls.py",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/complete.html",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/index.html",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/pastclasses.html",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/register.html",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/appointment.html",
+				"/home/tatsu/coding/python/django/mwstables/students/templates/students/pastclasses",
+				"/home/tatsu/coding/python/django/mwstables/students/static/students/css/style.css",
+				"/home/tatsu/coding/python/django/mwstables/mwstables/urls.py"
+			],
+			"find":
+			{
+				"height": 34.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+					""
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"objects.all",
+					"()",
+					"newapp",
+					"]\n",
+					"\n    ",
+					"nav",
+					"css",
+					"js",
+					"navbar"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"path": "/home/tatsu/coding/python/django/mwstables"
+				}
+			],
+			"groups":
+			[
+				{
+					"selected": 2,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/tatsu/coding/python/django/mwstables/students/templates/students/register.html",
+							"settings":
+							{
+								"buffer_size": 1967,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										154,
+										154
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/HTML/HTML.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 59.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/tatsu/coding/python/django/mwstables/students/forms.py",
+							"settings":
+							{
+								"buffer_size": 1256,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1247,
+										1247
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Python/Python.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/tatsu/coding/python/django/mwstables/students/views.py",
+							"settings":
+							{
+								"buffer_size": 2394,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1573,
+										1573
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Python/Python.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 621.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/tatsu/coding/python/django/mwstables/students/models.py",
+							"settings":
+							{
+								"buffer_size": 1749,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Python/Python.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 4,
+							"file": "/home/tatsu/coding/python/django/mwstables/students/urls.py",
+							"settings":
+							{
+								"buffer_size": 412,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										406,
+										406
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Python/Python.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 31.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"position": "0,0,0,0,0,0,35,1360,765,1366,768",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 263.0,
+			"status_bar_visible": true,
+			"window_id": 2,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

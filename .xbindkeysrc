@@ -52,18 +52,18 @@
 
 #Increase volume
 "pamixer -i 5"
-    m:0x0 + c:127
-    Pause 
+    m:0x0 + c:78
+    Scroll_Lock
 
 #lower volume
 "pamixer -d 5"
-    m:0x0 + c:78
-    Scroll_Lock 
+    m:0x0 + c:127
+    Pause
 
 #mute/unmute
 "pamixer -t"
-    m:0x1 + c:78
-    Shift + Scroll_Lock 
+    m:0x0 + c:127
+    Shift + Pause
 
 #
 # End of xbindkeys configuration
