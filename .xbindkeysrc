@@ -36,12 +36,12 @@
 
 
 #launch firefox
-"firefox"
+"firefox-aurora"
     m:0x5 + c:25
     Control+Shift + w 
 
 #launch scrot
-"scrot"
+"deepin-screenshot"
     m:0x0 + c:107
     Print 
 

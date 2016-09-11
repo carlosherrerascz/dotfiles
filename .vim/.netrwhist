@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/var/lib/connman'
 let g:netrw_dirhist_2='/var/lib/connman/wifi_c8d719101ce5_475547555f424c41545f4e4554_managed_psk'
 let g:netrw_dirhist_3='/home/tatsu/.oh-my-zsh'
 let g:netrw_dirhist_4='/home/tatsu/dotfiles/.i3/bashscripts'
+let g:netrw_dirhist_5='/home/carlos/.i3'
+let g:netrw_dirhist_6='/home/carlos/dotfiles/.config/gtk-2.0'
+let g:netrw_dirhist_7='/home/carlos/dotfiles/.config/gtk-3.0'

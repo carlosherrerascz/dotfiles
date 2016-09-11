@@ -1,2 +1,5 @@
 ###### Progress log entry 2015-10-13 07:59:40 ######
 ###### Progress log entry 2015-10-15 07:37:14 ######
+###### Progress log entry 2016-09-05 23:24:43 ######
+Reinstalling all deployed packages...
+###### Progress log entry 2016-09-05 23:25:01 ######

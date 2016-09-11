@@ -5,14 +5,14 @@ filetype off                  " required
 set shell=/bin/bash
 "set rtp+=~/.vim/plugged/gruvbox/colors/gruvbox.vim
 set number
+set statusline+=%{SyntasticStatuslineFlag()} 
+set runtimepath
 """"""""""""""
 "THEMING
 """"""""""""""
 let base16colorspace=256
 set t_co=256
 set background=dark
-colorscheme base16-chalk 
-
 set number
 "set tabbing to 4 spaces.
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
