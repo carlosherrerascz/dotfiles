@@ -3,11 +3,10 @@ set nocompatible
 filetype off                 
 "In case the shell being used is fish which has problems with 
 "plugins like syntastic
-set shell=/bin/bash
 "set rtp+=~/.vim/plugged/gruvbox/colors/gruvbox.vim
 set number
 set statusline+=%{SyntasticStatuslineFlag()} 
-set runtimepath
+"set runtimepath
 """"""""""""""
 "THEMING
 """"""""""""""
