@@ -1,5 +1,6 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+au FileType gitcommit set tw=72 | set spell | set colorcolumn=50
+set nocompatible              
+filetype off                 
 "In case the shell being used is fish which has problems with 
 "plugins like syntastic
 set shell=/bin/bash
