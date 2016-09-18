@@ -21,7 +21,7 @@ set $ws4 4: 
 # email
 set $ws5 5: 
 # Music
-set $ws6 6: 
+set $ws6 6:    
 set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"
@@ -99,6 +99,11 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
+
+
 bindsym $mod+Tab workspace back_and_forth
 
 
@@ -172,7 +177,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 mode "resize" {
-        bindsym h resize shrink width 30 px or 30 ppt
+    bindsym h resize shrink width 30 px or 30 ppt
         bindsym j resize grow height 30 px or 30 ppt
         bindsym k resize shrink height 30 px or 30 ppt
         bindsym l resize grow width 30 px or 30 ppt
@@ -295,18 +300,18 @@ client.urgent $base02 $base08 $base07 $base08
 ## remember to add the rest of your configuration
 
 bar {
-    ## remember to add your favourite status bar, i.e.,
-     status_command i3blocks
-    
+## remember to add your favourite status bar, i.e.,
+    status_command i3blocks
+
         colors {
-        separator $base03
-        background $base01
-        statusline $base05
-        focused_workspace $base0C $base0D $base00
-        active_workspace $base02 $base02 $base07
-        inactive_workspace $base01 $base01 $base03
-        urgent_workspace $base08 $base08 $base07
-    }
+            separator $base03
+                background $base01
+                statusline $base05
+                focused_workspace $base0C $base0D $base00
+                active_workspace $base02 $base02 $base07
+                inactive_workspace $base01 $base01 $base03
+                urgent_workspace $base08 $base08 $base07
+        }
 }
 for_window [class="^.*"] border pixel 2
 
