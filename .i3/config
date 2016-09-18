@@ -38,6 +38,7 @@ bindsym $mod+Shift+q kill
 exec_always --no-startup-id compton -b
 exec_always --no-startup-id nm-applet
 exec --no-startup-id ~/.fehbg
+exec --no-startup-id redshift-gtk
 
 
 ################################################
