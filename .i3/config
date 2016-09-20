@@ -315,4 +315,14 @@ bar {
 }
 for_window [class="^.*"] border pixel 2
 
+<<<<<<< HEAD
+=======
+for_window [class="^.*"] border pixel 3
+
+# Gaps settings
+# gaps inner 10
+
+exec [--no-startup-id] firefox 
+exec [--no-startup-id] urxvt
+>>>>>>> Change in i3 border width.
 
