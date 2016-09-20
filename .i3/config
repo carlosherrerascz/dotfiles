@@ -27,6 +27,7 @@ set $ws4 4: 
 set $ws5 5: 
 # Music
 <<<<<<< HEAD
+<<<<<<< HEAD
 set $ws6 6:    
 =======
 set $ws3 3: "3 " 
@@ -37,6 +38,9 @@ set $ws6  "6"
 =======
 set $ws6 6: 
 >>>>>>> Update laptop settings from desktop.
+=======
+set $ws6 6: 
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
 set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"
@@ -46,14 +50,19 @@ set $ws10 "10"
 font pango:System San Francisco Display 10
 #font pango: Source Code Pro 9
 <<<<<<< HEAD
+<<<<<<< HEAD
 #font pango: Font Awesome 10, Terminus 8
 =======
 font pango: Font Awesome 10, Terminus 8
 >>>>>>> Update laptop settings from desktop.
+=======
+font pango: Font Awesome 10, Terminus 8
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
 floating_modifier $mod
 
 bindsym $mod+Shift+q kill
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 exec_always --no-startup-id compton -b
 exec_always --no-startup-id nm-applet
@@ -74,6 +83,9 @@ bindsym $mod+d exec rofi -show run  -padding 340 -width 1400 -lines 3 -eh 2 -fon
 
 =======
 
+=======
+
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
 ################################################
 # APP LAUNCHING
 ################################################
@@ -82,7 +94,10 @@ bindsym $mod+shift+Return exec urxvt -name ranger -e ranger
 bindsym $mod+m exec urxvt -name ncmpcpp -e ncmpcpp
 bindsym $mod+shift+m exec urxvt -name mutt -e mutt 
 bindsym $mod+d exec rofi -show run -auto-select -location 2 
+<<<<<<< HEAD
 >>>>>>> Update laptop settings from desktop.
+=======
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -104,10 +119,13 @@ bindsym $mod+Shift+Right move right
 
 bindsym $mod+Shift+v split h
 <<<<<<< HEAD
+<<<<<<< HEAD
 bindsym $mod+Shift+x exec --no-startup-id i3lock -c 2f343f
 
 =======
 >>>>>>> Update laptop settings from desktop.
+=======
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
 bindsym $mod+v split v
 
 bindsym $mod+f fullscreen
@@ -161,6 +179,7 @@ assign [class="^URxvt$"] $ws3
 assign [instance="libreoffice"] $ws4
 assign [instance="discord"] $ws2
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ###################################
 # WORKSPACE MULTIDISPLAY 
@@ -179,6 +198,8 @@ workspace "$ws5" output DVI-0
 workspace "$ws6" output DVI-0
 =======
 >>>>>>> Update laptop settings from desktop.
+=======
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
 
 workspace_auto_back_and_forth yes
 
@@ -216,21 +237,32 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 mode "resize" {
 <<<<<<< HEAD
+<<<<<<< HEAD
     bindsym h resize shrink width 30 px or 30 ppt
         bindsym j resize grow height 30 px or 30 ppt
         bindsym k resize shrink height 30 px or 30 ppt
         bindsym l resize grow width 30 px or 30 ppt
 =======
+=======
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
+<<<<<<< HEAD
 >>>>>>> Update laptop settings from desktop.
 
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
+=======
+
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -348,9 +380,12 @@ bar {
 ## remember to add your favourite status bar, i.e.,
     status_command i3blocks
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         colors {
 =======
+=======
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
     strip_workspace_numbers no 
     position top
     verbose yes
@@ -369,6 +404,7 @@ bar {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 for_window [class="^.*"] border pixel 1
 =======
 for_window [class="^.*"] border pixel 3
@@ -382,3 +418,6 @@ exec [--no-startup-id] firefox
 exec [--no-startup-id] urxvt
 =======
 >>>>>>> Update laptop settings from desktop.
+=======
+for_window [class="^.*"] border pixel 3
+>>>>>>> 9aa6d0fe7c2562fe7a5ae15d45126e46a6a8db2d
