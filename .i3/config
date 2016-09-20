@@ -1,5 +1,5 @@
 set $mod Mod4
-set $alt Mod1
+#set $alt Mod1
 
 set $background #161616
 set $foreground #ffffff
@@ -8,6 +8,7 @@ set $primary    #dddddd
 set $secondary  #666666
 set $tertiary   #222222
 set $warning    #e84f4f
+
 
 ## Set $wsx's were here
 # Firefox
@@ -49,7 +50,8 @@ bindsym $mod+shift+Return exec urxvt -name ranger -e ranger
 bindsym $mod+m exec urxvt -name ncmpcpp -e ncmpcpp
 bindsym $mod+shift+m exec urxvt -name mutt -e mutt 
 
-bindsym $mod+d exec rofi -show run -padding 450 -width 1920 -lines 3 -eh 2 -font "System San Francisco Display 18"
+#bindsym $mod+d exec rofi -show run -padding 450 -width 1360 -lines 3 -eh 2 -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run  -padding 340 -width 1400 -lines 3 -eh 2 -font "System San Francisco Display 18"
 
 
 bindsym $mod+h focus left
@@ -313,16 +315,11 @@ bar {
                 urgent_workspace $base08 $base08 $base07
         }
 }
-for_window [class="^.*"] border pixel 2
 
-<<<<<<< HEAD
-=======
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
 
 # Gaps settings
 # gaps inner 10
 
 exec [--no-startup-id] firefox 
 exec [--no-startup-id] urxvt
->>>>>>> Change in i3 border width.
-
