@@ -20,15 +20,26 @@ ForEach ($Package in $Packages) {
 	choco install $Package -y
 }
 
-Wrte-Host "Installing GlazeWM from winget..."
+Write-Host "Installing GlazeWM from winget..."
 Start-Sleep -s 1
 
-winget install lars-berger.GlazeWM
+winget install lars-berger.GlazeWM --silent --accept-source-agreements --accept-package-agreements --disable-interactivity 
 
-$localAppData = $env:LOCALAPPDATA
 $homeFolder = $env:USERPROFILE
 
-Copy-Item -Path ./.glazewm -Destination $homeFolder -Recurse
+$roamingAppData = $env:APPDATA
 
+Copy-Item -Path ".\.glazewm" -Destination $homeFolder -Recurse
+
+$vscodeSettings= "$roamingAppData\Code\User"
+$timestamp = Get-Date -Format "yyyyMMddHHmmss"
+$keybindingsBackup = "keybindings_$timestamp.json"
+
+Copy-Item -Path "$vscodeSettings\keybindings.json" -Destination "$vscodeSettings\$keybindingsBackup" -Force
+
+Write-Host "VSCode keybindings backup created in $vscodeSettings\$keybindingsBackup."
+Start-Sleep -s 1
+
+Copy-Item -Path ".\vscode_settings\keybindings.json" -Destination $vscodeSettings -Force
 
 Write-Host "Done. To set up WSL, run the install script."
