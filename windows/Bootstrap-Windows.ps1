@@ -40,6 +40,6 @@ Copy-Item -Path "$vscodeSettings\keybindings.json" -Destination "$vscodeSettings
 Write-Host "VSCode keybindings backup created in $vscodeSettings\$keybindingsBackup."
 Start-Sleep -s 1
 
-Copy-Item -Path ".\vscode_settings\keybindings.json" -Destination $vscodeSettings -Force
+Copy-Item -Path "..\shared\vscode\keybindings.json" -Destination $vscodeSettings -Force
 
 Write-Host "Done. To set up WSL, run the install script."
