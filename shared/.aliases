@@ -50,7 +50,7 @@ release_file="/etc/os-release"
 ########################################
 ### Arch-based
 ########################################
-if [ grep -q -i archlinux $release_file ] || [ grep -q -i endeavouros $release_file ]; then
+if grep -q -i archlinux $release_file || grep -q -i endeavouros $release_file; then
   alias yolo="sudo pacman -Syu --noconfirm && yay -Syua --devel --noconfirm && flatpak update -y && flatpak uninstall --unused -y"
   alias lsorphans="pacman -Qtdq"
   alias rmorphans="pacman -Qtdq | sudo pacman -Rns -"
