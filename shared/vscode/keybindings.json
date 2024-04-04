@@ -222,7 +222,7 @@
     },
     // Toggle panel on and off
     {
-        "key": "ctrl+shift+t",
+        "key": "alt+t",
         "command": "workbench.action.togglePanel"
     },
     {
