@@ -1,0 +1,67 @@
+{
+  "custom-layouts": [
+    {
+      "uuid": "{F20EE78D-E4AC-475F-8872-AAFBD03ED781}",
+      "name": "G9",
+      "type": "grid",
+      "info": {
+        "rows": 2,
+        "columns": 4,
+        "rows-percentage": [
+          5000,
+          5000
+        ],
+        "columns-percentage": [
+          2614,
+          4437,
+          1469,
+          1480
+        ],
+        "cell-child-map": [
+          [
+            0,
+            2,
+            3,
+            5
+          ],
+          [
+            1,
+            2,
+            4,
+            6
+          ]
+        ],
+        "show-spacing": true,
+        "spacing": 16,
+        "sensitivity-radius": 20
+      }
+    },
+    {
+      "uuid": "{6D5AC9CA-7C97-4D73-84AB-7E249510B063}",
+      "name": "CraZ",
+      "type": "grid",
+      "info": {
+        "rows": 1,
+        "columns": 3,
+        "rows-percentage": [
+          10000
+        ],
+        "columns-percentage": [
+          3333,
+          3333,
+          3334
+        ],
+        "cell-child-map": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "show-spacing": true,
+        "spacing": 16,
+        "sensitivity-radius": 20
+      }
+    }
+  ]
+}
