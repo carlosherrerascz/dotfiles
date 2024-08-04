@@ -1,0 +1,79 @@
+{
+  "custom-layouts": [
+    {
+      "uuid": "{F20EE78D-E4AC-475F-8872-AAFBD03ED781}",
+      "name": "G9 - Productivity",
+      "type": "grid",
+      "info": {
+        "rows": 2,
+        "columns": 4,
+        "rows-percentage": [
+          5000,
+          5000
+        ],
+        "columns-percentage": [
+          2506,
+          2493,
+          2495,
+          2506
+        ],
+        "cell-child-map": [
+          [
+            0,
+            1,
+            2,
+            4
+          ],
+          [
+            6,
+            7,
+            3,
+            5
+          ]
+        ],
+        "show-spacing": true,
+        "spacing": 15,
+        "sensitivity-radius": 20
+      }
+    },
+    {
+      "uuid": "{6D5AC9CA-7C97-4D73-84AB-7E249510B063}",
+      "name": "G9 - Gaming",
+      "type": "grid",
+      "info": {
+        "rows": 3,
+        "columns": 3,
+        "rows-percentage": [
+          5000,
+          1,
+          4999
+        ],
+        "columns-percentage": [
+          2501,
+          5000,
+          2499
+        ],
+        "cell-child-map": [
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            2,
+            4
+          ]
+        ],
+        "show-spacing": true,
+        "spacing": 0,
+        "sensitivity-radius": 20
+      }
+    }
+  ]
+}
